@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="TODO.txt" />
+    <ClCompile Include="PID_controller.cpp" />
+    <ClCompile Include="Rocker.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\BalanceControlPi\Dummy.cpp" />
+    <ClInclude Include="Global_definitions.h" />
+    <ClInclude Include="PID_controller.h" />
+    <ClInclude Include="Rocker.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

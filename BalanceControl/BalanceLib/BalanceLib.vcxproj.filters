@@ -15,11 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="TODO.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\BalanceControl\Dummy.cpp">
+    <ClCompile Include="Rocker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PID_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Rocker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PID_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Global_definitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
