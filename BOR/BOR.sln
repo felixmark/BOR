@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BOR", "BOR\BOR.vcxproj", "{05106CA5-3F44-4143-9B3A-DAE9B594414E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05106CA5-3F44-4143-9B3A-DAE9B594414E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{05106CA5-3F44-4143-9B3A-DAE9B594414E}.Debug|ARM.Build.0 = Debug|ARM
+		{05106CA5-3F44-4143-9B3A-DAE9B594414E}.Release|ARM.ActiveCfg = Release|ARM
+		{05106CA5-3F44-4143-9B3A-DAE9B594414E}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB724650-176F-47BC-B65C-5F05620AD51C}
+	EndGlobalSection
+EndGlobal
