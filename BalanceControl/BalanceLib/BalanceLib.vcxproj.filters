@@ -13,20 +13,38 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\pi_emulator">
+      <UniqueIdentifier>{c7e2f6fa-fb2b-42e5-8705-f692d202a042}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Rocker.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="winpi.cpp">
+      <Filter>Header Files\pi_emulator</Filter>
+    </ClCompile>
+    <ClCompile Include="WinpiEmulator.cpp">
+      <Filter>Header Files\pi_emulator</Filter>
     </ClCompile>
     <ClCompile Include="PID_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rocker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Rocker.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="winpi.h">
+      <Filter>Header Files\pi_emulator</Filter>
+    </ClInclude>
+    <ClInclude Include="WinpiEmulator.h">
+      <Filter>Header Files\pi_emulator</Filter>
+    </ClInclude>
+    <ClInclude Include="piproxy.h">
+      <Filter>Header Files\pi_emulator</Filter>
     </ClInclude>
     <ClInclude Include="PID_controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rocker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Global_definitions.h">
