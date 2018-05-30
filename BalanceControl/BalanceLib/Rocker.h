@@ -1,11 +1,11 @@
 #pragma once
 #include "Global_definitions.h"
-
+#include <iostream>
 
 class Rocker {
 private:
-	static constexpr double MAX_ANGLE_ = (PI * 180) / 8;
-	static constexpr double MAX_ANGLE_CHANGE_ = (PI * 180) / 32;
+	static constexpr double MAX_ANGLE_ = 180.0 / 8;
+	static constexpr double MAX_ANGLE_CHANGE_ = 180.0 / 32;
 
 	double position_;
 	double angle_;
@@ -14,9 +14,10 @@ private:
 	double time_elapsed_;
 
 public:
+	// =============== CONSTRUCTORS ===============
 	Rocker();
 	Rocker(double position, double angle, double ball_speed);
-	
+
 	// =============== COMPLEX PHYSICS ===============
 	void step();
 	void push_ball(double speed);
@@ -29,5 +30,8 @@ public:
 	void set_ball_speed(double ball_speed);
 	double get_ball_speed() const;
 	double get_time_elapsed() const;
-};
+	bool is_ball_on_rocker() const;
 
+	// =============== OTHER ===============
+	friend std::ostream& operator << (std::ostream &o, Rocker &rocker);
+};

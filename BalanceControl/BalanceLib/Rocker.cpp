@@ -1,11 +1,18 @@
 #include "Rocker.h"
 #include <math.h>
+#include <iostream>
 
 Rocker::Rocker() : Rocker(50, 0, 0) {
 }
 
-Rocker::Rocker(double position, double angle, double ball_speed) : position_{ position }, angle_{ angle }, desired_angle_{ angle }, ball_speed_ { ball_speed } {
-	/* Constructor with Initialisation List */
+Rocker::Rocker(double position, double angle, double ball_speed) : position_{ position }, angle_{ angle }, desired_angle_{ angle }, ball_speed_{ ball_speed }, time_elapsed_{ 0 } {
+	if (angle_ > MAX_ANGLE_) {
+		angle_ = MAX_ANGLE_;
+	}
+	else if (angle_ < -MAX_ANGLE_) {
+		angle_ = -MAX_ANGLE_;
+	}
+	desired_angle_ = angle_;
 }
 
 void Rocker::step() {
@@ -13,21 +20,24 @@ void Rocker::step() {
 	// a = g * sin(angle)
 
 	// Calculate new angle
-	if (desired_angle_ > MAX_ANGLE_CHANGE_) {
+	if (desired_angle_ - angle_ > MAX_ANGLE_CHANGE_) {
 		angle_ = angle_ + MAX_ANGLE_CHANGE_;
-	} else if (desired_angle_ < -MAX_ANGLE_CHANGE_) {
+	}
+	else if (desired_angle_ - angle_ < -MAX_ANGLE_CHANGE_) {
 		angle_ = angle_ - MAX_ANGLE_CHANGE_;
-	} else {
+	}
+	else {
 		angle_ = desired_angle_;
 	}
+	double rad_angle = (angle_ / 180.0)*PI;
 
-	// Calculate a, v and d
-	double acceleration = GRAVITY * sin(angle_);
+	// Calculate acceleration
+	double acceleration = -(GRAVITY * sin(rad_angle));
+
+	// Calculate new speed and position
 	double speed = acceleration * STEPSIZE;
-	double distance = speed * STEPSIZE;
-
-	// Set new Values
 	ball_speed_ = ball_speed_ + speed;
+	double distance = ball_speed_ * STEPSIZE;
 	position_ = position_ + distance;
 
 	// Add elapsed time to local Variable
@@ -40,9 +50,11 @@ void Rocker::push_ball(double speed) {
 void Rocker::set_angle(double angle) {
 	if (angle > MAX_ANGLE_) {
 		desired_angle_ = MAX_ANGLE_;
-	} else if (angle < -MAX_ANGLE_) {
+	}
+	else if (angle < -MAX_ANGLE_) {
 		desired_angle_ = -MAX_ANGLE_;
-	} else {
+	}
+	else {
 		desired_angle_ = angle;
 	}
 }
@@ -69,4 +81,25 @@ double Rocker::get_ball_speed() const {
 
 double Rocker::get_time_elapsed() const {
 	return time_elapsed_;
+}
+
+bool Rocker::is_ball_on_rocker() const {
+	return (position_ < -100 || position_ > 100) ? false : true;
+}
+
+std::ostream & operator<<(std::ostream & os, Rocker & rocker) {
+	os << "Angle: " << rocker.get_angle() << " deg" << std::endl;
+	os << "Position: " << rocker.get_position() << " cm" << std::endl;
+	os << "Elapsed time: " << rocker.get_time_elapsed() << " s" << std::endl;
+
+	if (rocker.is_ball_on_rocker()) {
+		for (int i = 0; i < (rocker.get_position() + 100) / 10; ++i) os << " ";
+		os << "O" << std::endl;
+		for (int i = 0; i < 20; ++i) os << "-";
+	}
+	else {
+		os << "Fallen off the Rocker!" << std::endl;
+	}
+	os << std::endl;
+	return os;
 }
