@@ -1,5 +1,4 @@
 #include "piproxy.h"
-
 #include <Windows.h>
 #include <iostream>
 #include <thread>

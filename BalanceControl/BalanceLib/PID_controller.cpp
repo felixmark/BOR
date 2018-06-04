@@ -1,3 +1,4 @@
+#include "piproxy.h"
 #include "PID_controller.h"
 #include "Global_definitions.h"
 

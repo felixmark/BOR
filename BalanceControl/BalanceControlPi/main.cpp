@@ -1,3 +1,4 @@
+#include "../BalanceLib/piproxy.h"
 #include <iostream>
 #include "../BalanceLib/Rocker.h"
 #include <thread>
