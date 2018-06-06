@@ -11,7 +11,6 @@ private:
 	int pin_;
 
 public:
-	Digital_output();
 	Digital_output(std::string name, int pin, Status status);
 	Digital_output(const Digital_output& other) = delete;
 	Digital_output& operator =(const Digital_output& other) = delete;

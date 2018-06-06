@@ -11,7 +11,6 @@ private:
 	int pin_;
 
 public:
-	Digital_input();
 	Digital_input(std::string name, int pin, int pullUpDown);
 	Digital_input(const Digital_input& other) = delete;
 	Digital_input& operator =(const Digital_input& other) = delete;

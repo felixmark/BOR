@@ -1,8 +1,6 @@
 #include "DigitalOutput.h"
 #include "PinManager.h"
 
-Digital_output::Digital_output() : Digital_output("?", 0, Status::OFF) { /* Call other constructor */ }
-
 Digital_output::Digital_output(std::string name, int pin, Status status) : name_{ name }, pin_{ pin } {
 	// Setup
 	Pin_manager pm;

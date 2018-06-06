@@ -2,8 +2,7 @@
 
 std::vector<int> Pin_manager::reserved_pins_{};
 
-Pin_manager::Pin_manager() {
-}
+Pin_manager::Pin_manager() {}
 
 int Pin_manager::reserve(int pin) {
 	std::vector<int>::iterator position = std::find(reserved_pins_.begin(), reserved_pins_.end(), pin);

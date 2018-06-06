@@ -1,8 +1,6 @@
 #include "DigitalInput.h"
 #include "PinManager.h"
 
-Digital_input::Digital_input() : Digital_input("?", 0, PUD_DOWN) { /* Call other constructor */ }
-
 Digital_input::Digital_input(std::string name, int pin, int pullUpDown) : name_{ name }, pin_{ pin } {
 	// Setup Pin
 	Pin_manager pm;

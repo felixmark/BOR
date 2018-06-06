@@ -2,6 +2,7 @@
 #include "../BalanceLib/Rocker.h"
 #include "DigitalOutput.h"
 #include "DigitalInput.h"
+#include "json.hpp"
 
 class Pi_rocker {
 private:
@@ -16,7 +17,7 @@ private:
 
 
 public:
-	Pi_rocker();
+	Pi_rocker(nlohmann::json json);
 	void run();
 };
 
