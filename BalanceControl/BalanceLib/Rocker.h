@@ -5,7 +5,7 @@
 class Rocker {
 private:
 	static constexpr double MAX_ANGLE_ = 180.0 / 8;
-	static constexpr double MAX_ANGLE_CHANGE_ = 180.0 / 32;
+	static constexpr double MAX_ANGLE_CHANGE_ = 180.0 / 4;
 
 	double position_;
 	double angle_;

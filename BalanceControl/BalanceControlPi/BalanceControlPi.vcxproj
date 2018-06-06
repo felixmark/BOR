@@ -68,12 +68,14 @@
     <ClCompile Include="..\BalanceLib\PID_controller.cpp" />
     <ClCompile Include="..\BalanceLib\Rocker.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PiRocker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\BalanceLib\Global_definitions.h" />
     <ClInclude Include="..\BalanceLib\PID_controller.h" />
     <ClInclude Include="..\BalanceLib\piproxy.h" />
     <ClInclude Include="..\BalanceLib\Rocker.h" />
+    <ClInclude Include="PiRocker.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

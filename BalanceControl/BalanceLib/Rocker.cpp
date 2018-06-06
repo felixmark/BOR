@@ -19,10 +19,10 @@ void Rocker::step() {
 	// a = g * sin(angle)
 
 	// Calculate new angle
-	if (desired_angle_ - angle_ > MAX_ANGLE_CHANGE_) {
-		angle_ = angle_ + MAX_ANGLE_CHANGE_;
-	} else if (desired_angle_ - angle_ < -MAX_ANGLE_CHANGE_) {
-		angle_ = angle_ - MAX_ANGLE_CHANGE_;
+	if (desired_angle_ - angle_ > MAX_ANGLE_CHANGE_ * STEPSIZE) {
+		angle_ = angle_ + MAX_ANGLE_CHANGE_ * STEPSIZE;
+	} else if (desired_angle_ - angle_ < -MAX_ANGLE_CHANGE_ * STEPSIZE) {
+		angle_ = angle_ - MAX_ANGLE_CHANGE_ * STEPSIZE;
 	} else {
 		angle_ = desired_angle_;
 	}
