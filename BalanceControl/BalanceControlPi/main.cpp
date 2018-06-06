@@ -1,6 +1,6 @@
-#include "../BalanceLib/piproxy.h"
-#include <iostream>
 #include "../BalanceLib/Rocker.h"
+
+#include <iostream>
 #include <thread>
 
 using namespace std;

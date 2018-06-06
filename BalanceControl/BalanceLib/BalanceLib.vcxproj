@@ -21,16 +21,11 @@
   <ItemGroup>
     <ClCompile Include="PID_controller.cpp" />
     <ClCompile Include="Rocker.cpp" />
-    <ClCompile Include="winpi.cpp" />
-    <ClCompile Include="WinpiEmulator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Global_definitions.h" />
     <ClInclude Include="PID_controller.h" />
-    <ClInclude Include="piproxy.h" />
     <ClInclude Include="Rocker.h" />
-    <ClInclude Include="winpi.h" />
-    <ClInclude Include="WinpiEmulator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

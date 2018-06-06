@@ -1,4 +1,3 @@
-#include "piproxy.h"
 #include "winpi.h"
 
 #include <thread>
