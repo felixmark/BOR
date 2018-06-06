@@ -7,11 +7,20 @@
 #include "DigitalInput.h"
 #include <thread>
 #include <chrono>
+#include <cstdlib>
 
 using namespace std;
-using Json = nlohmann::json;
 
-Pi_rocker::Pi_rocker(Json json_pins) :
+void Pi_rocker::clear_screen() {
+#ifdef _WIN32
+	std::system("cls");
+#else
+	// Assume POSIX
+	std::system("clear");
+#endif
+}
+
+Pi_rocker::Pi_rocker(nlohmann::json json_pins) :
 	rocker_{ 0, 100, 0 }, 
 	led_1_{ Digital_output("led_1", json_pins["led_1"].get<int>(), Status::OFF) },
 	led_2_{ Digital_output("led_2", json_pins["led_2"].get<int>(), Status::OFF) },
@@ -33,7 +42,7 @@ void Pi_rocker::run() {
 
 	while(1) {
 		// Simulate 0,1 seconds
-		system("cls");
+		clear_screen();
 		for (int i = 0; i < 100; ++i) { rocker_.step(); }
 		cout << rocker_;
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
