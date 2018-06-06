@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Rocker.h"
 #include <math.h>
 #include <iostream>
