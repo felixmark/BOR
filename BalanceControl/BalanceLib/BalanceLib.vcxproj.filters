@@ -21,12 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="winpi.cpp">
-      <Filter>Header Files\pi_emulator</Filter>
-    </ClCompile>
-    <ClCompile Include="WinpiEmulator.cpp">
-      <Filter>Header Files\pi_emulator</Filter>
-    </ClCompile>
     <ClCompile Include="PID_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -53,15 +47,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="winpi.h">
-      <Filter>Header Files\pi_emulator</Filter>
-    </ClInclude>
-    <ClInclude Include="WinpiEmulator.h">
-      <Filter>Header Files\pi_emulator</Filter>
-    </ClInclude>
-    <ClInclude Include="piproxy.h">
-      <Filter>Header Files\pi_emulator</Filter>
-    </ClInclude>
     <ClInclude Include="PID_controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
