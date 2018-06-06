@@ -24,6 +24,27 @@
     <ClCompile Include="WinpiEmulator.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="..\BalanceControlPi\DigitalInput.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BalanceControlPi\DigitalOutput.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BalanceControlPi\IDigitalInput.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BalanceControlPi\IDigitalOutput.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BalanceControlPi\PinManager.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BalanceControlPi\PiRocker.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BalanceControlPi\Status.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="winpi.h">
@@ -33,6 +54,30 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="piproxy.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BalanceControlPi\DigitalInput.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BalanceControlPi\DigitalOutput.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BalanceControlPi\IDigitalInput.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BalanceControlPi\IDigitalOutput.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BalanceControlPi\PinManager.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BalanceControlPi\PiRocker.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BalanceControlPi\Status.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BalanceControlPi\json.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

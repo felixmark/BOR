@@ -1,5 +1,4 @@
 #pragma once
-#include "piproxy.h"
 
 enum class Status { ON, OFF };
 

@@ -1,10 +1,10 @@
 #include "PiRocker.h"
 #include <fstream>
-#include "../BalanceLib/json.hpp"
-#include "../BalanceLib/PinManager.h"
-#include "../BalanceLib/DigitalOutput.h"
-#include "../BalanceLib/Status.h"
-#include "../BalanceLib/DigitalInput.h"
+#include "json.hpp"
+#include "PinManager.h"
+#include "DigitalOutput.h"
+#include "Status.h"
+#include "DigitalInput.h"
 #include <thread>
 #include <chrono>
 
@@ -16,13 +16,13 @@ Pi_rocker::Pi_rocker() : rocker_{0, 100, 0} {
 	json json_pins;
 	file >> json_pins;
 
-	led_1_("led_1", json_pins["led_1"].get<int>(), Status::OFF);
-	led_2_("led_2", json_pins["led_2"].get<int>(), Status::OFF);
-	led_3_("led_3", json_pins["led_3"].get<int>(), Status::OFF);
-	led_4_("led_4", json_pins["led_4"].get<int>(), Status::OFF);
-	led_5_("led_5", json_pins["led_5"].get<int>(), Status::OFF);
-	btn_1_("btn_1", json_pins["btn_1"].get<int>(), PUD_DOWN);
-	btn_2_("btn_2", json_pins["btn_2"].get<int>(), PUD_DOWN);
+	led_1_ = Digital_output( "led_1", json_pins["led_1"].get<int>(), Status::OFF );
+	led_2_ = Digital_output( "led_2", json_pins["led_2"].get<int>(), Status::OFF );
+	led_3_ = Digital_output( "led_3", json_pins["led_3"].get<int>(), Status::OFF );
+	led_4_ = Digital_output( "led_4", json_pins["led_4"].get<int>(), Status::OFF );
+	led_5_ = Digital_output( "led_5", json_pins["led_5"].get<int>(), Status::OFF );
+	btn_1_ = Digital_input( "btn_1", json_pins["btn_1"].get<int>(), PUD_DOWN );
+	btn_2_ = Digital_input( "btn_2", json_pins["btn_2"].get<int>(), PUD_DOWN );
 }
 
 void Pi_rocker::run() {

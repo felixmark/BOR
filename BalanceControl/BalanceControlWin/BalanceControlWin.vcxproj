@@ -19,11 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\BalanceControlPi\DigitalInput.cpp" />
+    <ClCompile Include="..\BalanceControlPi\DigitalOutput.cpp" />
+    <ClCompile Include="..\BalanceControlPi\IDigitalInput.cpp" />
+    <ClCompile Include="..\BalanceControlPi\IDigitalOutput.cpp" />
     <ClCompile Include="..\BalanceControlPi\main.cpp" />
+    <ClCompile Include="..\BalanceControlPi\PinManager.cpp" />
+    <ClCompile Include="..\BalanceControlPi\PiRocker.cpp" />
+    <ClCompile Include="..\BalanceControlPi\Status.cpp" />
     <ClCompile Include="winpi.cpp" />
     <ClCompile Include="WinpiEmulator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\BalanceControlPi\DigitalInput.h" />
+    <ClInclude Include="..\BalanceControlPi\DigitalOutput.h" />
+    <ClInclude Include="..\BalanceControlPi\IDigitalInput.h" />
+    <ClInclude Include="..\BalanceControlPi\IDigitalOutput.h" />
+    <ClInclude Include="..\BalanceControlPi\json.hpp" />
+    <ClInclude Include="..\BalanceControlPi\PinManager.h" />
+    <ClInclude Include="..\BalanceControlPi\PiRocker.h" />
+    <ClInclude Include="..\BalanceControlPi\Status.h" />
     <ClInclude Include="piproxy.h" />
     <ClInclude Include="winpi.h" />
     <ClInclude Include="WinpiEmulator.h" />

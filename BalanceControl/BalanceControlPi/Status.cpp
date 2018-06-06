@@ -1,3 +1,4 @@
+#include "piproxy.h"
 #include "Status.h"
 
 bool status_to_bool(Status status) {

@@ -1,5 +1,7 @@
 #pragma once
 #include "../BalanceLib/Rocker.h"
+#include "DigitalOutput.h"
+#include "DigitalInput.h"
 
 class Pi_rocker {
 private:

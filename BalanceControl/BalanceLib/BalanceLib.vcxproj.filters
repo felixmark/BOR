@@ -16,9 +16,6 @@
     <Filter Include="Header Files\pi_emulator">
       <UniqueIdentifier>{c7e2f6fa-fb2b-42e5-8705-f692d202a042}</UniqueIdentifier>
     </Filter>
-    <Filter Include="I/O">
-      <UniqueIdentifier>{bce866da-4294-40a9-a1eb-7cce2ee7d275}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PID_controller.cpp">
@@ -26,24 +23,6 @@
     </ClCompile>
     <ClCompile Include="Rocker.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IDigitalOutput.cpp">
-      <Filter>I/O</Filter>
-    </ClCompile>
-    <ClCompile Include="DigitalInput.cpp">
-      <Filter>I/O</Filter>
-    </ClCompile>
-    <ClCompile Include="DigitalOutput.cpp">
-      <Filter>I/O</Filter>
-    </ClCompile>
-    <ClCompile Include="IDigitalInput.cpp">
-      <Filter>I/O</Filter>
-    </ClCompile>
-    <ClCompile Include="PinManager.cpp">
-      <Filter>I/O</Filter>
-    </ClCompile>
-    <ClCompile Include="Status.cpp">
-      <Filter>I/O</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,31 +35,8 @@
     <ClInclude Include="Global_definitions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IDigitalInput.h">
-      <Filter>I/O</Filter>
+    <ClInclude Include="piproxy.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IDigitalOutput.h">
-      <Filter>I/O</Filter>
-    </ClInclude>
-    <ClInclude Include="DigitalInput.h">
-      <Filter>I/O</Filter>
-    </ClInclude>
-    <ClInclude Include="DigitalOutput.h">
-      <Filter>I/O</Filter>
-    </ClInclude>
-    <ClInclude Include="PinManager.h">
-      <Filter>I/O</Filter>
-    </ClInclude>
-    <ClInclude Include="json.hpp">
-      <Filter>I/O</Filter>
-    </ClInclude>
-    <ClInclude Include="Status.h">
-      <Filter>I/O</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pins.json">
-      <Filter>I/O</Filter>
-    </None>
   </ItemGroup>
 </Project>
