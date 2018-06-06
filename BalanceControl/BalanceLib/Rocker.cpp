@@ -95,9 +95,9 @@ std::ostream & operator<<(std::ostream & os, Rocker & rocker) {
 	os << "Elapsed time: " << rocker.get_time_elapsed() << " s" << std::endl;
 
 	if (rocker.is_ball_on_rocker()) {
-		for (int i = 0; i < (rocker.get_position() + 100) / 10; ++i) os << " ";
+		for (int i = 0; i < (rocker.get_position() + 100) / 2; ++i) os << " ";
 		os << "O" << std::endl;
-		for (int i = 0; i < 20; ++i) os << "-";
+		for (int i = 0; i < 100; ++i) os << "-";
 	}
 	else {
 		os << "Fallen off the Rocker!" << std::endl;
