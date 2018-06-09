@@ -164,7 +164,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BalanceLib\BalanceLib.vcxproj">
+    <ProjectReference Include="..\BalanceLib\BalanceLib.vcxproj">
       <Project>{fe9e9ab1-49a4-49f0-a5b3-b2d654eb8807}</Project>
     </ProjectReference>
   </ItemGroup>

@@ -1,12 +1,11 @@
 #include <limits>
 #include <stdexcept>
-#include "piproxy.h"
 #include "PID_controller.h"
 #include "Global_definitions.h"
 
 using namespace std;
 
-constexpr double EPSILON = 1E-6;
+static constexpr double EPSILON = 1E-6;
 
 PID_controller::PID_controller() : kp_{ 1 }, ki_{ 0 }, kd_{ 0 }, y_sum_{ 0 }, y_prev_{ 0 },
 	limit_output_{ false }, lower_saturation_limit_{ std::numeric_limits<double>::lowest() }, upper_saturation_limit_{ std::numeric_limits<double>::max() }
@@ -16,14 +15,14 @@ PID_controller::PID_controller() : kp_{ 1 }, ki_{ 0 }, kd_{ 0 }, y_sum_{ 0 }, y_
 PID_controller::PID_controller(double kp, double ki, double kd) : kp_{ kp }, ki_{ ki }, kd_{ kd }, y_sum_{ 0 }, y_prev_{ 0 },
 	limit_output_{false}, lower_saturation_limit_{ std::numeric_limits<double>::lowest() }, upper_saturation_limit_{ std::numeric_limits<double>::max() }
 {
-	if (kp_ < EPSILON || ki_ < EPSILON || kd_ < EPSILON)
+	if (kp_ < -EPSILON || ki_ < -EPSILON || kd_ < -EPSILON)
 		throw range_error("Some constant out of range.");
 }
 
 PID_controller::PID_controller(double kp, double ki, double kd, double lower_saturation_limit, double upper_saturation_limit) : kp_{ kp }, ki_{ ki }, kd_{ kd }, y_sum_{ 0 }, y_prev_{ 0 }, 
 	limit_output_{ true }, lower_saturation_limit_{ lower_saturation_limit }, upper_saturation_limit_{ upper_saturation_limit }
 {
-	if(kp_ < EPSILON || ki_ < EPSILON || kd_ < EPSILON)
+	if(kp_ < -EPSILON || ki_ < -EPSILON || kd_ < -EPSILON)
 		throw range_error("Some constant out of range.");
 	if (lower_saturation_limit_ > upper_saturation_limit_)
 		throw range_error("Lower saturation limit greater than upper saturation limit.");
@@ -46,21 +45,21 @@ double PID_controller::get_kd() const
 
 void PID_controller::set_kp(double kp)
 { 
-	if (kp_ < EPSILON)
+	if (kp_ < -EPSILON)
 		throw range_error("Constant kp out of range.");
 	kp_ = kp;
 }
 
 void PID_controller::set_ki(double ki)
 {
-	if (ki_ < EPSILON)
+	if (ki_ < -EPSILON)
 		throw range_error("Constant ki out of range.");
 	ki_ = ki;
 }
 
 void PID_controller::set_kd(double kd)
 {
-	if (kd_ < EPSILON)
+	if (kd_ < -EPSILON)
 		throw range_error("Constant kd out of range.");
 	kd_ = kd;
 }

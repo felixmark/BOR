@@ -32,13 +32,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BalanceOptimizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\BalanceLib\PID_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\BalanceLib\test_PID_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BalanceOptimizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

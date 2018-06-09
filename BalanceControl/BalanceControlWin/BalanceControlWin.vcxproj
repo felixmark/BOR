@@ -23,10 +23,12 @@
     <ClCompile Include="..\BalanceControlPi\DigitalOutput.cpp" />
     <ClCompile Include="..\BalanceControlPi\IDigitalInput.cpp" />
     <ClCompile Include="..\BalanceControlPi\IDigitalOutput.cpp" />
-    <ClCompile Include="..\BalanceControlPi\main.cpp" />
     <ClCompile Include="..\BalanceControlPi\PinManager.cpp" />
     <ClCompile Include="..\BalanceControlPi\PiRocker.cpp" />
     <ClCompile Include="..\BalanceControlPi\Status.cpp" />
+    <ClCompile Include="..\BalanceLib\PID_controller.cpp" />
+    <ClCompile Include="..\BalanceLib\test_PID_controller.cpp" />
+    <ClCompile Include="..\BalanceOptimizer\BalanceOptimizer.cpp" />
     <ClCompile Include="winpi.cpp" />
     <ClCompile Include="WinpiEmulator.cpp" />
   </ItemGroup>
@@ -37,8 +39,9 @@
     <ClInclude Include="..\BalanceControlPi\IDigitalOutput.h" />
     <ClInclude Include="..\BalanceControlPi\json.hpp" />
     <ClInclude Include="..\BalanceControlPi\PinManager.h" />
-    <ClInclude Include="..\BalanceControlPi\PiRocker.h" />
     <ClInclude Include="..\BalanceControlPi\Status.h" />
+    <ClInclude Include="..\BalanceLib\PID_controller.h" />
+    <ClInclude Include="..\BalanceLib\test_PID_controller.h" />
     <ClInclude Include="piproxy.h" />
     <ClInclude Include="winpi.h" />
     <ClInclude Include="WinpiEmulator.h" />
