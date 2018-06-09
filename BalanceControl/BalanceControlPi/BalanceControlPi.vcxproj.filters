@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\BalanceLib\PID_controller.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="IDigitalInput.cpp">
+      <Filter>I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="IDigitalOutput.cpp">
+      <Filter>I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="PinManager.cpp">
+      <Filter>I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="Status.cpp">
+      <Filter>I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="DigitalInput.cpp">
+      <Filter>I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="DigitalOutput.cpp">
+      <Filter>I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="PiRocker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BalanceLib\Global_definitions.h" />
+    <ClInclude Include="..\BalanceLib\PID_controller.h" />
+    <ClInclude Include="piproxy.h" />
+    <ClInclude Include="IDigitalInput.h">
+      <Filter>I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="IDigitalOutput.h">
+      <Filter>I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="PinManager.h">
+      <Filter>I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="DigitalInput.h">
+      <Filter>I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="DigitalOutput.h">
+      <Filter>I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="PiRocker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="I/O">
+      <UniqueIdentifier>{c00c3666-146a-43d1-99b4-e6b07ee0e271}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pins.json">
+      <Filter>I/O</Filter>
+    </None>
+  </ItemGroup>
+</Project>

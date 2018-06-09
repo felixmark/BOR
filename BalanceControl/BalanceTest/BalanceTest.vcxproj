@@ -152,16 +152,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\BalanceLib\Global_definitions.h" />
-    <ClInclude Include="..\BalanceLib\PID_controller.h" />
-    <ClInclude Include="..\BalanceLib\piproxy.h" />
-    <ClInclude Include="..\BalanceLib\Rocker.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\BalanceLib\PID_controller.cpp" />
-    <ClCompile Include="..\BalanceLib\Rocker.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

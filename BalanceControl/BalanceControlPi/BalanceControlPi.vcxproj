@@ -66,14 +66,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\BalanceLib\PID_controller.cpp" />
-    <ClCompile Include="..\BalanceLib\Rocker.cpp" />
+    <ClCompile Include="DigitalInput.cpp" />
+    <ClCompile Include="DigitalOutput.cpp" />
+    <ClCompile Include="IDigitalInput.cpp" />
+    <ClCompile Include="IDigitalOutput.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PinManager.cpp" />
+    <ClCompile Include="PiRocker.cpp" />
+    <ClCompile Include="Status.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\BalanceLib\Global_definitions.h" />
     <ClInclude Include="..\BalanceLib\PID_controller.h" />
-    <ClInclude Include="..\BalanceLib\piproxy.h" />
-    <ClInclude Include="..\BalanceLib\Rocker.h" />
+    <ClInclude Include="DigitalInput.h" />
+    <ClInclude Include="DigitalOutput.h" />
+    <ClInclude Include="IDigitalInput.h" />
+    <ClInclude Include="IDigitalOutput.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="PinManager.h" />
+    <ClInclude Include="piproxy.h" />
+    <ClInclude Include="PiRocker.h" />
+    <ClInclude Include="Status.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pins.json" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

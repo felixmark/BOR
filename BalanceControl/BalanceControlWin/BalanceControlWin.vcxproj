@@ -18,11 +18,41 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\BalanceControlPi\DigitalInput.cpp" />
+    <ClCompile Include="..\BalanceControlPi\DigitalOutput.cpp" />
+    <ClCompile Include="..\BalanceControlPi\IDigitalInput.cpp" />
+    <ClCompile Include="..\BalanceControlPi\IDigitalOutput.cpp" />
+    <ClCompile Include="..\BalanceControlPi\main.cpp" />
+    <ClCompile Include="..\BalanceControlPi\PinManager.cpp" />
+    <ClCompile Include="..\BalanceControlPi\PiRocker.cpp" />
+    <ClCompile Include="..\BalanceControlPi\Status.cpp" />
+    <ClCompile Include="winpi.cpp" />
+    <ClCompile Include="WinpiEmulator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BalanceControlPi\DigitalInput.h" />
+    <ClInclude Include="..\BalanceControlPi\DigitalOutput.h" />
+    <ClInclude Include="..\BalanceControlPi\IDigitalInput.h" />
+    <ClInclude Include="..\BalanceControlPi\IDigitalOutput.h" />
+    <ClInclude Include="..\BalanceControlPi\json.hpp" />
+    <ClInclude Include="..\BalanceControlPi\PinManager.h" />
+    <ClInclude Include="..\BalanceControlPi\PiRocker.h" />
+    <ClInclude Include="..\BalanceControlPi\Status.h" />
+    <ClInclude Include="piproxy.h" />
+    <ClInclude Include="winpi.h" />
+    <ClInclude Include="WinpiEmulator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BalanceLib\BalanceLib.vcxproj">
+      <Project>{fe9e9ab1-49a4-49f0-a5b3-b2d654eb8807}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{F3363660-E821-4510-A55B-5AE834344AE6}</ProjectGuid>
+    <ProjectGuid>{D8EEB2FE-B6F9-4C1B-A08F-40105CBCCA60}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>BalanceUI</RootNamespace>
+    <RootNamespace>BalanceControlWin</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -84,23 +114,17 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PreBuildEvent>
-      <Command>xcopy /s/y bin\*.dll ..\Debug\</Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -152,27 +176,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BalanceUI.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BalanceLib\BalanceLib.vcxproj">
-      <Project>{fe9e9ab1-49a4-49f0-a5b3-b2d654eb8807}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="OpenSans-Regular.ttf" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
