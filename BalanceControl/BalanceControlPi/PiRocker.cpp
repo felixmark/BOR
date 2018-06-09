@@ -40,7 +40,11 @@ void Pi_rocker::run() {
 		std::this_thread::sleep_for(std::chrono::seconds(2));
 	}
 
-	while(1) {
+	for (int cnt = 0; true; cnt++) {
+		if (cnt % 10 == 0) {
+			rocker_.set_angle(-rocker_.get_angle());
+		}
+
 		// Simulate 0,1 seconds
 		clear_screen();
 		for (int i = 0; i < 100; ++i) { rocker_.step(); }
