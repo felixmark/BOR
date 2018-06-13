@@ -147,14 +147,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\BalanceLib\PID_controller.h" />
-    <ClInclude Include="..\BalanceLib\test_PID_controller.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="test_PID_controller.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\BalanceLib\PID_controller.cpp" />
-    <ClCompile Include="..\BalanceLib\test_PID_controller.cpp" />
     <ClCompile Include="BalanceOptimizer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -162,6 +159,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="test_PID_controller.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BalanceLib\BalanceLib.vcxproj">

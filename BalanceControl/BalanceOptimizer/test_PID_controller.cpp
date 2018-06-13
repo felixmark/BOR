@@ -1,6 +1,7 @@
+#include "stdafx.h"
 #include <iostream>
 #include <cmath>
-#include "../BalanceLib/test_PID_controller.h"
+#include "test_PID_controller.h"
 #include "../BalanceLib/PID_controller.h"
 
 constexpr double EPSILON = 1E-3;
