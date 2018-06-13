@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Global_definitions.cpp" />
     <ClCompile Include="PID_controller.cpp" />
     <ClCompile Include="Rocker.cpp" />
-    <ClCompile Include="test_PID_controller.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Global_definitions.h" />
