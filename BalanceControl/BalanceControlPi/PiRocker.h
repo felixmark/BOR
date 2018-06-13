@@ -18,6 +18,7 @@ private:
 
 	// =============== PRIVATE METHODS ===============
 	void clear_screen();
+	void turn_one_led_on(int led);
 
 public:
 	// =============== PUBLIC METHODS ===============

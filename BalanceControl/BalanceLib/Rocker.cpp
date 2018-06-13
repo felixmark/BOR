@@ -28,7 +28,7 @@ void Rocker::step() {
 	}
 
 	// Conversion to radiants
-	double rad_angle = (angle_ / 180.0)*PI;
+	double rad_angle = (angle_ * PI) / 180.0;
 
 	// Calculate acceleration
 	double acceleration = -(GRAVITY * sin(rad_angle));	// m/s^2
@@ -37,7 +37,7 @@ void Rocker::step() {
 	double speed = acceleration * STEPSIZE;				// m/s
 	ball_speed_ = ball_speed_ + speed;					// m/s
 	double distance = ball_speed_ * STEPSIZE;			// m
-	position_ = position_ + distance * 100;				// cm
+	position_ = position_ + distance * 100.0;				// cm
 
 	// Add elapsed time to local Variable
 	time_elapsed_ += STEPSIZE;
@@ -88,7 +88,7 @@ bool Rocker::is_ball_on_rocker() const {
 std::ostream & operator<<(std::ostream & os, Rocker & rocker) {
 	os << "Angle: " << rocker.get_angle() << " deg" << std::endl;
 	os << "Position: " << rocker.get_position() << " cm" << std::endl;
-	os << "Speed: " << (rocker.get_ball_speed()) << " m/s" << std::endl;
+	os << "Speed: " << rocker.get_ball_speed() << " m/s" << std::endl;
 	os << "Elapsed time: " << rocker.get_time_elapsed() << " s" << std::endl;
 
 	if (rocker.is_ball_on_rocker()) {

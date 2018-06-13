@@ -24,6 +24,9 @@
     <ClCompile Include="Rocker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Global_definitions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PID_controller.h">
