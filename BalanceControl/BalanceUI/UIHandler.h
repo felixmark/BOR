@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include "../BalanceLib/Global_definitions.h"
 #include <SFML\Graphics.hpp>
 #include "../BalanceLib/Rocker.h"
 #include "../BalanceLib/PID_controller.h"
@@ -30,7 +31,7 @@ private:
 	sf::Transform transform;
 	sf::Texture texture;
 
-	Rocker rocker;
+	Rocker rocker_;
 	PID_controller controller;
 	unsigned long time;
 

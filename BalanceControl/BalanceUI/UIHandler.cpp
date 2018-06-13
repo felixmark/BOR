@@ -17,42 +17,37 @@ void UI_handler::clear(sf::RenderWindow & window) {
 }
 
 void UI_handler::step(sf::RenderWindow & window) {
-	//vvvvvvvvvvvvvv Replace with PID controller vvvvvvvvvvvvvv
-	//if (time++ % 50 == 0) {
-	//	rocker.set_angle(-rocker.get_angle());
-	//}
-	//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-	double current_position = rocker.get_position();
-	controller.set_process_value(current_position);
 	for (long cnt = 0; cnt < sim_time; ++cnt) {
-		rocker.step();
+		double current_position = rocker_.get_position();
+		controller.set_process_value(current_position);
+		rocker_.step();
 		controller.step();
+		double angle = -controller.get_control_value();
+		rocker_.set_angle(angle);
 	}
-	double angle = -controller.get_control_value();
-	rocker.set_angle(angle);
 
 
 	//===================== SET BALL POSITION, ROCKER ROTATION AND TEXT =====================
 	circle.setOrigin(
 		center_x + ball_radius - (
-			cos(grad_to_rad(rocker.get_angle())) * 
-			rocker.get_position()*magnif_factor
+			cos(grad_to_rad(rocker_.get_angle())) * 
+			rocker_.get_position()*magnif_factor
 		),
 		center_y + (
-			sin(grad_to_rad(rocker.get_angle())) * 
-			rocker.get_position()*magnif_factor
+			sin(grad_to_rad(rocker_.get_angle())) * 
+			rocker_.get_position()*magnif_factor
 		)
 	);
 	transform = sf::Transform();
 	transform.rotate(
-		-rocker.get_angle(),
+		-rocker_.get_angle(),
 		{ static_cast<float>(-center_x), static_cast<float>(-center_y) }
 	);
-	text_time.setString("Simulated time: " + to_string(rocker.get_time_elapsed()) + " s");
-	text_position.setString("Position: " + to_string(rocker.get_position()) + " cm");
-	text_angle.setString("Angle: " + to_string(rocker.get_angle()) + " °");
-	text_ballspeed.setString("Ball speed: " + to_string(rocker.get_ball_speed()) + " m/s");
+	text_time.setString("Simulated time: " + to_string(rocker_.get_time_elapsed()) + " s");
+	text_position.setString("Position: " + to_string(rocker_.get_position()) + " cm");
+	text_angle.setString("Angle: " + to_string(rocker_.get_angle()) + " °");
+	text_ballspeed.setString("Ball speed: " + to_string(rocker_.get_ball_speed()) + " m/s");
 }
 
 void UI_handler::draw(sf::RenderWindow & window) {
@@ -69,7 +64,7 @@ void UI_handler::draw(sf::RenderWindow & window) {
 }
 
 void UI_handler::update(sf::RenderWindow & window) {
-	if (!rocker.is_ball_on_rocker()) {
+	if (!rocker_.is_ball_on_rocker()) {
 		window.draw(sprite_failed);
 		window.display();
 		this_thread::sleep_for(chrono::seconds(3));
@@ -140,8 +135,7 @@ void UI_handler::setup(sf::RenderWindow & window, sf::Font& font, sf::Image& ima
 
 
 	//===================== SIMULATION =====================
-	rocker = Rocker(30, 10, 0);
-	controller = PID_controller(0.1, 0.5, 0.2, - 180.0 / 8, 180.0 / 8);
-	controller.set_limit_output(true);
+	rocker_ = Rocker(20, 24, -0.3);
+	controller = PID_controller(0.2, 0, 0.07, - 180.0 / 8, 180.0 / 8);
 	time = 0;
 }
