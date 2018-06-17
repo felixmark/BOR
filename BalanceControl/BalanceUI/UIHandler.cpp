@@ -17,7 +17,25 @@ void UI_handler::clear(sf::RenderWindow & window) {
 }
 
 void UI_handler::step(sf::RenderWindow & window) {
+	// Read Left and Right Key on Keyboard
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && key_r_was_pressed_ == false) {
+		key_r_was_pressed_ = true;
+		start_time_ = chrono::steady_clock::now();
+	} else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && key_r_was_pressed_) {
+		int elapsed_ms = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - start_time_).count();
+		rocker_.push_ball(0.001*elapsed_ms);
+		key_r_was_pressed_ = false;
+	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && key_l_was_pressed_ == false) {
+		key_l_was_pressed_ = true;
+		start_time_ = chrono::steady_clock::now();
+	} else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && key_l_was_pressed_) {
+		int elapsed_ms = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - start_time_).count();
+		rocker_.push_ball(-0.001*elapsed_ms);
+		key_l_was_pressed_ = false;
+	}
 
+
+	// Simulate
 	for (long cnt = 0; cnt < sim_time; ++cnt) {
 		double current_position = rocker_.get_position();
 		controller.set_process_value(current_position);
@@ -79,6 +97,10 @@ void UI_handler::setup(sf::RenderWindow & window, sf::Font& font, sf::Image& ima
 	height = window.getView().getSize().y;
 	center_x = -window.getView().getSize().x / 2;
 	center_y = -window.getView().getSize().y / 2;
+	key_r_was_pressed_ = false;
+	key_l_was_pressed_ = false;
+	start_time_ = chrono::steady_clock::now();
+
 
 	//===================== VISUAL SFML OBJECTS =====================
 	// Ball
@@ -135,7 +157,7 @@ void UI_handler::setup(sf::RenderWindow & window, sf::Font& font, sf::Image& ima
 
 
 	//===================== SIMULATION =====================
-	rocker_ = Rocker(20, 24, -0.3);
-	controller = PID_controller(0.2, 0, 0.07, - 180.0 / 8, 180.0 / 8);
+	rocker_ = Rocker(0,25,0);
+	controller = PID_controller(0.2, 0, 0.08, - 180.0 / 8, 180.0 / 8);
 	time = 0;
 }

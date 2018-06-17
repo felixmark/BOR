@@ -1,7 +1,8 @@
 #pragma once
 #include <memory>
-#include "../BalanceLib/Global_definitions.h"
 #include <SFML\Graphics.hpp>
+#include <chrono>
+#include "../BalanceLib/Global_definitions.h"
 #include "../BalanceLib/Rocker.h"
 #include "../BalanceLib/PID_controller.h"
 
@@ -16,6 +17,10 @@ private:
 	int center_y;
 	int width;
 	int height;
+	bool key_r_was_pressed_;
+	bool key_l_was_pressed_;
+	std::chrono::time_point<std::chrono::steady_clock> start_time_;
+
 
 	sf::CircleShape circle;
 	sf::RectangleShape bar;
