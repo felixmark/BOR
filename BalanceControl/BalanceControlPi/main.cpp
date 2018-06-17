@@ -1,4 +1,4 @@
-#include <wiringPi.h>
+#include "../BalanceControlWin/piproxy.h"
 #include "../BalanceLib/Rocker.h"
 #include "../BalanceLib/PID_controller.h"
 

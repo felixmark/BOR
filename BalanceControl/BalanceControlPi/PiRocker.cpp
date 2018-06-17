@@ -9,8 +9,6 @@
 #include <chrono>
 #include <cstdlib>
 
-constexpr int LED_CNT = 5;
-
 using namespace std;
 
 void Pi_rocker::clear_screen() {
@@ -35,19 +33,6 @@ Pi_rocker::Pi_rocker(nlohmann::json json_pins) :
 }
 
 void Pi_rocker::run() {
-
-	led_1_.write(Status::ON);
-	led_2_.write(Status::ON);
-	led_3_.write(Status::ON);
-	led_4_.write(Status::ON);
-	led_5_.write(Status::ON);
-	this_thread::sleep_for(chrono::seconds(1));
-	led_1_.write(Status::OFF);
-	led_2_.write(Status::OFF);
-	led_3_.write(Status::OFF);
-	led_4_.write(Status::OFF);
-	led_5_.write(Status::OFF);
-
 	cout << rocker_;
 	cout << "Loading complex physics simulation";
 	for (int i = 0; i < 3; ++i) {
@@ -56,45 +41,14 @@ void Pi_rocker::run() {
 	}
 
 	for (int cnt = 0; true; cnt++) {
+		if (cnt % 10 == 0) {
+			rocker_.set_angle(-rocker_.get_angle());
+		}
+
 		// Simulate 0,1 seconds
 		clear_screen();
-
-		for (long cnt = 0; cnt < sim_time; ++cnt) {
-			double current_position = rocker_.get_position();
-			controller.set_process_value(current_position);
-			rocker_.step();
-			controller.step();
-			double angle = -controller.get_control_value();
-			rocker_.set_angle(angle);
-		}
-
-		if (rocker_.get_position() > -100 && rocker_.get_position() < 200 / LED_CNT - 100) {
-			turn_one_led_on(1);
-		} else if (rocker_.get_position() >  200 / LED_CNT - 100 && rocker_.get_position() < -10) {
-			turn_one_led_on(2);
-		} else if (rocker_.get_position() >  -10 && rocker_.get_position() < 10) {
-			turn_one_led_on(3);
-		} else if (rocker_.get_position() >  10 && rocker_.get_position() < 4 * 200 / LED_CNT - 100) {
-			turn_one_led_on(4);
-		} else if (rocker_.get_position() >  4 * 200 / LED_CNT - 100 && rocker_.get_position() < 5 * 200 / LED_CNT - 100) {
-			turn_one_led_on(5);
-		} else if (rocker_.get_position > 200 || rocker_.get_position < -200) {
-			led_1_.write(Status::ON);
-			led_2_.write(Status::ON);
-			led_3_.write(Status::ON);
-			led_4_.write(Status::ON);
-			led_5_.write(Status::ON);
-		}
-
+		for (int i = 0; i < 100; ++i) { rocker_.step(); }
 		cout << rocker_;
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
-}
-
-void Pi_rocker::turn_one_led_on(int led) {
-	led_1_.write(led == 1 ? Status::ON : Status::OFF);
-	led_2_.write(led == 2 ? Status::ON : Status::OFF);
-	led_3_.write(led == 3 ? Status::ON : Status::OFF);
-	led_4_.write(led == 4 ? Status::ON : Status::OFF);
-	led_5_.write(led == 5 ? Status::ON : Status::OFF);
 }

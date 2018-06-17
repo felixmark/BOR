@@ -1,6 +1,6 @@
 #pragma once
 #include "IDigitalInput.h"
-#include "piproxy.h"
+#include "../BalanceControlWin/piproxy.h"
 #include <string>
 #include <iostream>
 #include <memory>
