@@ -1,0 +1,15 @@
+The following modules are working:
+------------------------------------------------------------------------------------------------------------------
+^-^ BalanceUI: 		Everything (with PID Controller and Buttons etc.)
+^-° BalanceOptimizer:	Everything (hopefully)
+*-° BalanceControlWin:	A lot
+*-" BalanceControlPi:	A lot (too)
+o-o BalanceTest:	-
+
+The following modules are NOT working:
+------------------------------------------------------------------------------------------------------------------
+;_; BalanceUI:		Putting the ideal PID settings in the PID-controller.
+.-. BalanceOptimizer:	-
+v_v BalanceControlWin:	Pushbuttons to push the ball
+x-x BalanceControlPi:	Pushbuttons to push the ball (of course)
+q-q BalanceTest:	Nobody has written a test so.. there are no tests..

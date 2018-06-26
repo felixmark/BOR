@@ -28,7 +28,6 @@
     <ClCompile Include="..\BalanceControlPi\PiRocker.cpp" />
     <ClCompile Include="..\BalanceControlPi\Status.cpp" />
     <ClCompile Include="..\BalanceLib\PID_controller.cpp" />
-    <ClCompile Include="..\BalanceOptimizer\BalanceOptimizer.cpp" />
     <ClCompile Include="winpi.cpp" />
     <ClCompile Include="WinpiEmulator.cpp" />
   </ItemGroup>

@@ -22,6 +22,7 @@
     <ClCompile Include="PiRocker.cpp" />
     <ClCompile Include="..\BalanceLib\Rocker.cpp" />
     <ClCompile Include="..\BalanceLib\PID_controller.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\BalanceLib\Global_definitions.h" />

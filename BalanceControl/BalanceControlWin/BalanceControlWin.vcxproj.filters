@@ -45,9 +45,6 @@
     <ClCompile Include="..\BalanceLib\PID_controller.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\BalanceOptimizer\BalanceOptimizer.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="..\BalanceControlPi\main.cpp">
       <Filter>Headerdateien</Filter>
     </ClCompile>

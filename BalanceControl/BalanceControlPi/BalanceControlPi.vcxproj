@@ -71,6 +71,7 @@
     <ClCompile Include="DigitalOutput.cpp" />
     <ClCompile Include="IDigitalInput.cpp" />
     <ClCompile Include="IDigitalOutput.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="PinManager.cpp" />
     <ClCompile Include="PiRocker.cpp" />
     <ClCompile Include="Status.cpp" />

@@ -11,7 +11,7 @@ using namespace std;
 using Json = nlohmann::json;
 
 int main(void) {
-	wiringPiSetup();
+	//wiringPiSetup();
 
 	ifstream file("pins.json");
 	Json json_pins;
