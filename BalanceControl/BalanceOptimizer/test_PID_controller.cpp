@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <iostream>
 #include <cmath>
 #include "test_PID_controller.h"
